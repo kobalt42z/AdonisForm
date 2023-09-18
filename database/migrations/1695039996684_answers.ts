@@ -7,6 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.text("body")
+      table.integer("user_id").unsigned().references("id").inTable("users")
       table.integer("question_id").unsigned().references("id").inTable("questions").nullable()
       table.boolean("is_accepted").defaultTo(false).notNullable()
       table.integer("rating").defaultTo(0).notNullable() // TODO: index it fro high to low (for perf ?)
