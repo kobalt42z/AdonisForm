@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 1354213542
+      POSTGRES_USER: lucid
+      POSTGRES_DB: lucid
+    volumes:
+      - db-vol:/postgresql/
+volumes:
+  db-vol:
