@@ -8,13 +8,13 @@ export default class Question extends BaseModel {
 
   @column()
   public userId: number
-  
+
   @column()
   public title: string
 
   @column()
   public description: string
-  
+
   @column()
   public viewCount: number
 
