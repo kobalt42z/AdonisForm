@@ -1,7 +1,7 @@
-import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator'
+import { schema, CustomMessages,rules } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-export default class SignupValidator {
+export default class SigninValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -24,18 +24,9 @@ export default class SignupValidator {
    *    ```
    */
   public schema = schema.create({
-    email: schema.string({trim:true}, [
-      rules.email(),
-      rules.unique({ table: 'users', column: 'email', caseInsensitive: true }),
-    ]),
-    password: schema.string({}, [rules.confirmed(), rules.maxLength(16), rules.minLength(8)]),
-    userName: schema.string({trim:true}, [
-      rules.alphaNum(),
-      rules.minLength(2),
-      rules.maxLength(30),
-      rules.unique({ table: 'users', column: 'user_name' }),
-    ]), //password_confirmation field automatically validated
-    rememberMe:schema.boolean([])
+    email: schema.string({}, [rules.email()]),
+    password: schema.string({}, [rules.minLength(8),rules.maxLength(16)]),
+    rememberMe: schema.boolean(),
   })
 
   /**
