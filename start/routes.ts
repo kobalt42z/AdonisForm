@@ -26,6 +26,10 @@ Route.get('/', async ({ view }) => {
 Route.get('/home', async ({ view }) => {
   return view.render('home')
 })
-
+// auth shows
 Route.get('/signup',  'AuthController.signupShow').as('auth.signup.show')
 Route.get('/signin',  'AuthController.signinShow').as('auth.signin.show')
+
+//auth actions
+Route.post('/signup',  'AuthController.signup').as('auth.signup')
+Route.post('/signin',  'AuthController.signin').as('auth.signin')

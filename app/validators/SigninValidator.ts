@@ -26,7 +26,7 @@ export default class SigninValidator {
   public schema = schema.create({
     email: schema.string({}, [rules.email()]),
     password: schema.string({}, [rules.minLength(8),rules.maxLength(16)]),
-    rememberMe: schema.boolean(),
+    rememberMe: schema.boolean.optional(),
   })
 
   /**
@@ -40,5 +40,10 @@ export default class SigninValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {
+    'password.minLength': 'Password must be at least 8 characters long',
+    'password.maxLength': 'Password must be at most 16 characters long',
+    'email.email': 'Email is not valid',
+    'email.required': 'Email is required',
+  }
 }

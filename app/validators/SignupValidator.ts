@@ -49,5 +49,14 @@ export default class SignupValidator {
    * }
    *
    */
-  public messages: CustomMessages = {}
+  public messages: CustomMessages = {
+    'email.unique': 'Email is already taken',
+    'userName.unique': 'Username is already taken',
+    'email.required': 'Email is required',
+    'email.email': 'Email is not valid',
+    'password.confirmed': 'password  d\'ont match',
+    'password.minLength': 'Password must be at least 8 characters long',
+    'password.maxLength': 'Password must be at most 16 characters long',
+    'userName.minLength': 'Username must be at least 2 characters long',
+  }
 }

@@ -22,10 +22,17 @@ export default class AuthController {
     return response.redirect('/')
   }
   public async signin({ request, response, session, auth }: HttpContextContract) {
-    const {email,password,rememberMe} =  await request.validate(SigninValidator)
+      const {email,password,rememberMe} =  await request.validate(SigninValidator)
+ try {
+
+    //  must addd attempt login 
     await auth.attempt(email, password,rememberMe)
     session.flash('success', 'welcome to forum')
     response.redirect("/")
+ } catch (error) {
+    session.flash('errors', { form: 'The provided username/email or password is incorrect' })
+    return response.redirect().back()
+ }
   }
   public async signout({ auth, response ,session}: HttpContextContract) {
     await auth.logout()
