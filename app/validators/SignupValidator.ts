@@ -34,8 +34,8 @@ export default class SignupValidator {
       rules.minLength(2),
       rules.maxLength(30),
       rules.unique({ table: 'users', column: 'user_name' }),
-    ]), //password_confirmation field automatically validated
-    rememberMe:schema.boolean([])
+    ]), 
+    rememberMe:schema.boolean.optional()
   })
 
   /**
@@ -51,12 +51,15 @@ export default class SignupValidator {
    */
   public messages: CustomMessages = {
     'email.unique': 'Email is already taken',
-    'userName.unique': 'Username is already taken',
     'email.required': 'Email is required',
     'email.email': 'Email is not valid',
     'password.confirmed': 'password  d\'ont match',
     'password.minLength': 'Password must be at least 8 characters long',
     'password.maxLength': 'Password must be at most 16 characters long',
     'userName.minLength': 'Username must be at least 2 characters long',
+    'userName.alphaNum': 'Username can only contain letters and numbers',
+    'userName.maxLength': 'Username must be at most 30 characters long',
+    'userName.required': 'Username is required',
+    'userName.unique': 'Username is already taken',
   }
 }
