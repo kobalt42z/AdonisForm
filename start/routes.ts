@@ -25,7 +25,7 @@ Route.get('/', async ({ view }) => {
 })
 Route.get('/home', async ({ view }) => {
   return view.render('home')
-})
+}).middleware("Auth")
 // auth shows
 Route.get('/signup',  'AuthController.signupShow').as('auth.signup.show')
 Route.get('/signin',  'AuthController.signinShow').as('auth.signin.show')

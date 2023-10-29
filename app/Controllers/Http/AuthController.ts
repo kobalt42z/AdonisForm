@@ -24,11 +24,14 @@ export default class AuthController {
     const { email, password, rememberMe } = await request.validate(SigninValidator)
     try {
       //  must addd attempt login
+
+      console.log(email, password, rememberMe);
+      
       await auth.attempt(email, password, rememberMe)
       session.flash('success', 'welcome to forum')
       response.redirect('/')
     } catch (error) {
-      session.flash('errors', { form: 'The provided username/email or password is incorrect' })
+      session.flash('errors', { form: 'The provided email or password is incorrect' })
       return response.redirect().back()
     }
   }

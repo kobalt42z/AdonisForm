@@ -53,7 +53,7 @@ export default class SignupValidator {
     'email.unique': 'Email is already taken',
     'email.required': 'Email is required',
     'email.email': 'Email is not valid',
-    'password.confirmed': 'password  d\'ont match',
+    'password_confirmation.confirmed': 'password do not match',
     'password.minLength': 'Password must be at least 8 characters long',
     'password.maxLength': 'Password must be at most 16 characters long',
     'userName.minLength': 'Username must be at least 2 characters long',
@@ -61,5 +61,6 @@ export default class SignupValidator {
     'userName.maxLength': 'Username must be at most 30 characters long',
     'userName.required': 'Username is required',
     'userName.unique': 'Username is already taken',
+    
   }
 }
