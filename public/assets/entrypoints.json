@@ -7,6 +7,11 @@
       "js": [
         "http://localhost:8080/assets/app.js"
       ]
+    },
+    "flowbite": {
+      "js": [
+        "http://localhost:8080/assets/flowbite.js"
+      ]
     }
   }
 }

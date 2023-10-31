@@ -46,6 +46,7 @@ Encore.setPublicPath('/assets')
 |
 */
 Encore.addEntry('app', './resources/js/app.js')
+Encore.addEntry('flowbite', './node_modules/flowbite/dist/flowbite.min.js')
 
 
 /*

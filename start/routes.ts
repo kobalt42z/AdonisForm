@@ -20,16 +20,18 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
+Route.get('/', async ({ view,auth  }) => {
+if(auth.isLoggedIn) return view.render('home')
   return view.render('welcome')
 })
 Route.get('/home', async ({ view }) => {
   return view.render('home')
-}).middleware("Auth")
+})
 // auth shows
-Route.get('/signup',  'AuthController.signupShow').as('auth.signup.show')
-Route.get('/signin',  'AuthController.signinShow').as('auth.signin.show')
+Route.get('/signup', 'AuthController.signupShow').as('auth.signup.show')
+Route.get('/signin', 'AuthController.signinShow').as('auth.signin.show')
 
 //auth actions
-Route.post('/signup',  'AuthController.signup').as('auth.signup')
-Route.post('/signin',  'AuthController.signin').as('auth.signin')
+Route.post('/signup', 'AuthController.signup').as('auth.signup')
+Route.post('/signin', 'AuthController.signin').as('auth.signin')
+Route.get('/signout', 'AuthController.signout').as('auth.signout')
