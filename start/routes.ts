@@ -27,6 +27,9 @@ if(auth.isLoggedIn) return view.render('home')
 Route.get('/home', async ({ view }) => {
   return view.render('home')
 })
+Route.get('/tags', async ({ view }) => {
+  return view.render('home')
+})
 // auth shows
 Route.get('/signup', 'AuthController.signupShow').as('auth.signup.show')
 Route.get('/signin', 'AuthController.signinShow').as('auth.signin.show')
