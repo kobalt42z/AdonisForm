@@ -27,6 +27,9 @@ if(auth.isLoggedIn) return view.render('home')
 Route.get('/home', async ({ view }) => {
   return view.render('home')
 })
+Route.get('/questions', async ({ view }) => {
+  return view.render('questions')
+})
 Route.get('/tags', async ({ view }) => {
   return view.render('home')
 })

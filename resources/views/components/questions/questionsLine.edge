@@ -1,0 +1,31 @@
+<li class="border-y-[1px] border-gray-500 border-gray flex space-x-2 py-2">
+    {{-- left part --}}
+    <div class="w-4/12 flex space-x-2  p-2 justify-end text-xs capitalize">
+        <ul class="space-y-2">
+            <li>{{votes}}</li>
+            <li>{{answers}}</li>
+            <li>{{views}}</li>
+        </ul>
+        <ul class="space-y-2">
+            <li>votes</li>
+            <li>answers</li>
+            <li>views</li>
+        </ul>
+
+    </div>
+    {{-- right part --}}
+    <div class="capitalize text-blue-400 ">
+        <h1>{{title}}</h1>
+        
+        <div class="p-2 flex justify-between px-3">
+            <div>
+                @!component('components/badges/badge',{text:"javaScript"})
+                @!component('components/badges/badge',{text:"javaScript"})
+                @!component('components/badges/badge',{text:"javaScript"})
+            </div>
+            <p class="text-xs px-2"><span>someUser</span> asked <span>1 minutes ago </span> </p>
+         
+        </div>
+    </div>
+
+</li>

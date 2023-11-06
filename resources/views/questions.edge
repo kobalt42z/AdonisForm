@@ -1,0 +1,24 @@
+@layout('layouts/main')
+@set('title', 'test')
+@section('content')
+<div>
+    <div class="p-5 border-b-2 border-gary">
+        <div class="flex justify-between">
+            <h1 class="text-xl capitalize">some title taht defind the question </h1>
+            @!component('components/buttons/button',{text:"Ask a question "})
+        </div>
+        <ul class="flex space-x-3 text-sm">
+            <li>asked <span>today</span></li>
+            <li>modified <span>today</span></li>
+            <li>viewed <span>22</span> times </li>
+        </ul>
+    </div>
+</div>
+@end
+
+@section('leftSide')
+
+<div id="left" class="max-lg:hidden lg:col-span-2 ">
+    yyy
+</div>
+@end
