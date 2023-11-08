@@ -5,11 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  
   @entryPointStyles('app')
   @entryPointScripts('app')
+  @entryPointScripts('editorjs')
   @entryPointScripts('flowbite')
   
-
+ 
 
   <script defer>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -19,7 +21,7 @@
           document.documentElement.classList.remove('dark')
       }
   </script>
-  @!section('script')
+  @!section('head')
 
 </head>
 

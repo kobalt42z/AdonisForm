@@ -12,6 +12,11 @@
       "js": [
         "http://localhost:8080/assets/flowbite.js"
       ]
+    },
+    "editorjs": {
+      "js": [
+        "http://localhost:8080/assets/editorjs.js"
+      ]
     }
   }
 }

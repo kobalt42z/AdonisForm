@@ -1,5 +1,6 @@
 {
   "assets/app.css": "http://localhost:8080/assets/app.css",
   "assets/app.js": "http://localhost:8080/assets/app.js",
-  "assets/flowbite.js": "http://localhost:8080/assets/flowbite.js"
+  "assets/flowbite.js": "http://localhost:8080/assets/flowbite.js",
+  "assets/editorjs.js": "http://localhost:8080/assets/editorjs.js"
 }
